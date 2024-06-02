@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	flagVersion bool
-	flagHelp    bool
+	flagVersionYes bool
+	flagHelpYes    bool
 )
 
 const (
@@ -33,16 +33,16 @@ or available locally via: info '(coreutils) yes invocation'`
 )
 
 func main() {
-	flag.BoolVar(&flagVersion, "version", false, "display version information")
-	flag.BoolVar(&flagHelp, "help", false, "display help information")
+	flag.BoolVar(&flagVersionYes, "version", false, "display version information")
+	flag.BoolVar(&flagHelpYes, "help", false, "display help information")
 	flag.Parse()
 
-	if flagVersion {
+	if flagVersionYes {
 		fmt.Printf("%s", versionYes)
 		os.Exit(0)
 	}
 
-	if flagHelp {
+	if flagHelpYes {
 		fmt.Printf("%s", helpYes)
 		os.Exit(0)
 	}
